@@ -1,0 +1,18 @@
+@WeatherDataService_HostAddress = http://localhost:5244
+
+### GET weather readings by location
+GET {{WeatherDataService_HostAddress}}/weatherreading?location=hello
+Accept: application/json
+
+
+### POST a new weather reading
+POST {{WeatherDataService_HostAddress}}/weatherreading
+Content-Type: application/json
+Accept: application/json
+
+{
+	"temperature": 35,
+	"location": "hello",
+	"humidity": 60.0,
+	"pressure": 2
+}
