@@ -10,11 +10,3 @@ services:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: "G7f!pQx9#TzL@v3W"
     restart: unless-stopped
-
-  jetstream:
-    image: nats
-    container_name: jetstream
-    command: -js
-    ports:
-      - "4222:4222"
-    restart: unless-stopped
