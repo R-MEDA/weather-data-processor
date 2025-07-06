@@ -2,6 +2,8 @@
 
 A simple .NET Web API for managing and retrieving weather data, with integration testing powered by Testcontainers.
 
+This code belongs to an artcile I wrote that can be found on [LinkedIn](https://www.linkedin.com/pulse/stepping-up-our-test-suite-using-honeycomb-testing-rashid-meda-5yhge/?trackingId=oJy4C3bKypAc7Ug5HOeONQ%3D%3D)
+
 ---
 
 ## 🧱 Solution Structure
