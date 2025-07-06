@@ -16,7 +16,7 @@ namespace WeatherDataService.IntegrationTests
 		#region POST /weatherreading
 
 		[Fact]
-		public async Task Post_WithValidReading_ReturnsCreatedAndPersists()
+		public async Task CreateReading_WithValidReading_ReturnsCreatedAndPersists()
 		{
 			// Arrange
 			var payload = new CreateReadingCommand
@@ -42,7 +42,7 @@ namespace WeatherDataService.IntegrationTests
 		}
 
 		[Fact]
-		public async Task Post_WithMissingLocation_ReturnsBadRequest()
+		public async Task CreateReading_WithMissingLocation_ReturnsBadRequest()
 		{
 			// Arrange
 			var payload = new CreateReadingCommand
@@ -61,7 +61,7 @@ namespace WeatherDataService.IntegrationTests
 		}
 
 		[Fact]
-		public async Task Post_WithMalformedJson_ReturnsBadRequest()
+		public async Task CreateReading_WithMalformedJson_ReturnsBadRequest()
 		{
 			// Arrange
 			var content = new StringContent("{ this is not valid json", Encoding.UTF8, "application/json");
@@ -78,7 +78,7 @@ namespace WeatherDataService.IntegrationTests
 		#region GET /weatherreading
 
 		[Fact]
-		public async Task Get_WithValidLocation_ReturnsReadings()
+		public async Task GetReadingBasedOn_WithValidLocation_ReturnsReadings()
 		{
 			// Arrange
 			var response = await _client.GetAsync("/weatherreading?location=Amsterdam");
@@ -97,7 +97,7 @@ namespace WeatherDataService.IntegrationTests
 		}
 
 		[Fact]
-		public async Task Get_WithEmptyLocation_ReturnsBadRequest()
+		public async Task GetReadingBasedOn_WithEmptyLocation_ReturnsBadRequest()
 		{
 			// Act
 			var response = await _client.GetAsync("/weatherreading?location=");
@@ -107,7 +107,7 @@ namespace WeatherDataService.IntegrationTests
 		}
 
 		[Fact]
-		public async Task Get_WithMissingLocationParam_ReturnsBadRequest()
+		public async Task GetReadingBasedOn_WithMissingLocationParam_ReturnsBadRequest()
 		{
 			// Act
 			var response = await _client.GetAsync(endpoint);
@@ -117,7 +117,7 @@ namespace WeatherDataService.IntegrationTests
 		}
 
 		[Fact]
-		public async Task Get_WithUnknownLocation_ReturnsNotFound()
+		public async Task GetReadingBasedOn_WithUnknownLocation_ReturnsNotFound()
 		{
 			// Act
 			var response = await _client.GetAsync("/weatherreading?location=NowhereLand");
