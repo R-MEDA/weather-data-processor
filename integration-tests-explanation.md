@@ -193,15 +193,3 @@ public class WeatherReadingTests(AppFactory factory) : TestBase(factory)
         new(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
 }
 ```
-
----
-
-## 🚀 Summary
-
-Using **Testcontainers** with SQL Server in integration tests allows:
-
-* Full end-to-end testing
-* Zero reliance on developer environments or shared test DBs
-* Consistent and isolated test states
-
-This makes your test suite **more reliable, reproducible**, and **production-like**.
