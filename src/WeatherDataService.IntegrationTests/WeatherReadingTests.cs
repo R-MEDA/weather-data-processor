@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using WeatherDataService.IntegrationTests.Helpers;
 using WeatherDataService.IntegrationTests.Helpers.Commands;
-using static WeatherDataService.Controllers.WeatherReadingController;
+using WeatherDataService.IntegrationTests.Helpers.Resources;
 
 namespace WeatherDataService.IntegrationTests
 {
