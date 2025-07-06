@@ -4,8 +4,9 @@ A simple .NET Web API for managing and retrieving weather data, with integration
 
 ---
 
-## 🧱 Project Structure
+## 🧱 Solution Structure
 
+* **`Device/`** – HTTP Client that simulates weather data
 * **`WeatherDataService/`** – ASP.NET Core Web API
 * **`WeatherDataService.IntegrationTests/`** – Integration test project using Testcontainers
 
@@ -34,14 +35,16 @@ Make sure you have the following installed:
 
    ```bash
    dotnet run --project WeatherDataService
-   ```
 
-3. The application should now be available at:
+3. **The application should now be available at:**
 
    ```
    http://localhost:5244
    ```
 
+4. _**Optional: Run the Device project**_
+   ```bash
+   dotnet run --project Device
 ---
 
 ## ⚙️ Configuration
